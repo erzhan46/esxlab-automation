@@ -1,4 +1,5 @@
 # esxlab-automation
+## Custom ESX ISO
 
 MYLAB.CFG - Esx installation script
 
@@ -41,3 +42,15 @@ Create new ISO:
 ```
 mkisofs -relaxed-filenames -J -R -o custom_esxi.iso -b ISOLINUX.BIN -c BOOT.CAT -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -eltorito-platform efi -b EFIBOOT.IMG -no-emul-boot  ./custom
 ```
+
+## Ansible
+
+```
+ansible-galaxy collection install community.general
+```
+
+Attaching Virtual Media is not suported via redfish on older iDRAC.
+Only strarting with v.3.30 it will be supported:
+https://github.com/dell/iDRAC-Redfish-Scripting/issues/24
+
+It seems that for older iDRAC - only PXE boot is the viable option for remote image
