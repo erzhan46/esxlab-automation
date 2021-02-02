@@ -1,6 +1,8 @@
 # esxlab-automation
 ## Custom ESX ISO
 
+Tested via iDRAC UI - using virtual device 
+
 MYLAB.CFG - Esx installation script
 
 ```
@@ -42,6 +44,8 @@ Create new ISO:
 ```
 mkisofs -relaxed-filenames -J -R -o custom_esxi.iso -b ISOLINUX.BIN -c BOOT.CAT -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -eltorito-platform efi -b EFIBOOT.IMG -no-emul-boot  ./custom
 ```
+
+
 
 ## Ansible
 
