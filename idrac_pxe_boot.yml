@@ -1,0 +1,58 @@
+- hosts: localhost
+  gather_facts: false
+
+  vars:
+    baseuri: esx-idrac.erzhan.org
+    username: root
+    password: calvin
+    bootdevice: Pxe
+    timeout: 60
+    validate_certs: no
+
+  collections:
+   - community.general
+
+  tasks:
+
+   - name: Set one-time boot device to {{ bootdevice }}
+     community.general.redfish_command:
+       category: Systems
+       command: SetOneTimeBoot
+       bootdevice: "{{ bootdevice }}"
+       baseuri: "{{ baseuri }}"
+       username: "{{ username }}"
+       password: "{{ password }}"
+       timeout: "{{ timeout }}"
+     register: output
+
+   - debug:
+       var: output
+
+   - name: Shutdown the server
+     community.general.redfish_command:
+       category: Systems
+       command: PowerGracefulShutdown
+       baseuri: "{{ baseuri }}"
+       username: "{{ username }}"
+       password: "{{ password }}"
+       timeout: "{{ timeout }}"
+     register: output
+
+   - debug:
+       var: output
+
+
+   - name: Power on the server
+     community.general.redfish_command:
+       category: Systems
+       command: PowerOn
+       baseuri: "{{ baseuri }}"
+       username: "{{ username }}"
+       password: "{{ password }}"
+       timeout: "{{ timeout }}"
+     register: output
+
+   - debug:
+       var: output
+
+
