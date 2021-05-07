@@ -137,6 +137,7 @@ Some troubleshooting:
 
 
 ## Ansible
+Ansible playbook can help automate the process of setting PXE boot device and restarting the server.
 
 ```
 ansible-galaxy collection install community.general
