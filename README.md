@@ -135,8 +135,15 @@ Some troubleshooting:
 - If server gets stuck right after acquiring IP address from DHCP server - check that server is configured for UEFI boot, check that mboot.efi exist in tftpboot directory on tftp server, check that DHCP server configured both for tftp and network booting
 
 
+
 ## Ansible
 
 ```
 ansible-galaxy collection install community.general
+```
+Update idrac_pxe_boot.yml playbook - set baseurl variable to server iDRAC ip address or hostname.
+Default username and password for iDRAC is admin/calvin
+Execute playbook:
+```
+ansible-playbook ./idrac_pxe_boot.yml
 ```
