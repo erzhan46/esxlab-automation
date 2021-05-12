@@ -22,9 +22,9 @@ diskutil list
 mount -t cd9660 /dev/disk2 ro_iso
 
 cd ro_iso
-tar cvf ../tmp.tar .
+tar cvf ../tmp.tar *
 cd ../custom
-tar xvfp ../tmp.tar
+tar xvf ../tmp.tar
 cd ..
 rm tmp.tar
 
@@ -80,9 +80,9 @@ diskutil list
 mount -t cd9660 /dev/disk2 ro_iso
 
 cd ro_iso
-tar cvf ../tmp.tar .
+tar cvf ../tmp.tar *
 cd ../custom
-tar xvfp ../tmp.tar
+tar xvf ../tmp.tar
 cd ..
 rm tmp.tar
 ```
