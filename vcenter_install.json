@@ -19,7 +19,14 @@
         },
         "network": {
             "ip_family": "ipv4",
-            "mode": "dhcp"
+            "mode": "static",
+            "system_name": "vcenter.erzhan.org",
+            "ip": "192.168.20.101",
+            "prefix": "24",
+            "gateway": "192.168.20.1",
+            "dns_servers": [
+                "192.168.20.1"
+            ]
         },
         "os": {
             "password": "Password123!",
