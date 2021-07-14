@@ -1,6 +1,7 @@
 # VCenter installation
 
-# MACOS deployment fails with OVF Tool size mismatch error during vcsa_deploy execution 
+Note: MACOS deployment fails with OVF Tool size mismatch error during vcsa_deploy execution 
+
 
 This document provides instructions on how to automate vCenter installation on ESX
 
