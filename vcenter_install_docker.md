@@ -2,7 +2,7 @@
 
 This document provides instructions on how to deply VCenter VSphere appliance on ESX server using docker.
 
-VCenter cli installation doesn't work on MacOS due to issues with mounting VCenter iso file and ovftool errors.
+VCenter cli installation doesn't work [on MacOS](vcenter_install_mac.md) due to issues with mounting VCenter iso file and ovftool errors.
 To overcome this issue docker based deployment is documented here.
 
 ## VCenter ISO
